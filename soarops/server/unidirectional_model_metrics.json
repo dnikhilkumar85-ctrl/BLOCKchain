@@ -1,0 +1,134 @@
+{
+  "model": "XGBClassifier (Unidirectional)",
+  "features_count": 40,
+  "accuracy": 0.9985,
+  "classes": [
+    "Bots",
+    "Brute Force",
+    "DDoS",
+    "DoS",
+    "Normal Traffic",
+    "Port Scanning",
+    "Web Attacks"
+  ],
+  "top_features": [
+    {
+      "feature": "Idle Max",
+      "importance": 0.17351466417312622
+    },
+    {
+      "feature": "Idle Mean",
+      "importance": 0.11440522968769073
+    },
+    {
+      "feature": "Packet Length Std",
+      "importance": 0.07067931443452835
+    },
+    {
+      "feature": "Total Length of Fwd Packets",
+      "importance": 0.06771986186504364
+    },
+    {
+      "feature": "Average Packet Size",
+      "importance": 0.06730194389820099
+    },
+    {
+      "feature": "Packet Length Variance",
+      "importance": 0.05711560323834419
+    },
+    {
+      "feature": "PSH Flag Count",
+      "importance": 0.049405306577682495
+    },
+    {
+      "feature": "Subflow Fwd Bytes",
+      "importance": 0.04343053698539734
+    },
+    {
+      "feature": "act_data_pkt_fwd",
+      "importance": 0.03976079821586609
+    },
+    {
+      "feature": "Fwd Packet Length Max",
+      "importance": 0.03441816195845604
+    },
+    {
+      "feature": "min_seg_size_forward",
+      "importance": 0.030377795919775963
+    },
+    {
+      "feature": "Packet Length Mean",
+      "importance": 0.0297462809830904
+    },
+    {
+      "feature": "Min Packet Length",
+      "importance": 0.029033251106739044
+    },
+    {
+      "feature": "Flow Bytes/s",
+      "importance": 0.02313040941953659
+    },
+    {
+      "feature": "Flow IAT Max",
+      "importance": 0.021750129759311676
+    }
+  ],
+  "classification_report": {
+    "Bots": {
+      "precision": 0.9,
+      "recall": 0.6428571428571429,
+      "f1-score": 0.75,
+      "support": 14.0
+    },
+    "Brute Force": {
+      "precision": 0.9897959183673469,
+      "recall": 0.9897959183673469,
+      "f1-score": 0.9897959183673469,
+      "support": 98.0
+    },
+    "DDoS": {
+      "precision": 1.0,
+      "recall": 0.9955801104972376,
+      "f1-score": 0.9977851605758582,
+      "support": 905.0
+    },
+    "DoS": {
+      "precision": 0.9960893854748604,
+      "recall": 0.9988795518207283,
+      "f1-score": 0.9974825174825175,
+      "support": 1785.0
+    },
+    "Normal Traffic": {
+      "precision": 0.9990039220569009,
+      "recall": 0.9992527554642257,
+      "f1-score": 0.9991283232675425,
+      "support": 16059.0
+    },
+    "Port Scanning": {
+      "precision": 0.9955555555555555,
+      "recall": 0.9973285841495992,
+      "f1-score": 0.99644128113879,
+      "support": 1123.0
+    },
+    "Web Attacks": {
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1-score": 0.896551724137931,
+      "support": 16.0
+    },
+    "accuracy": 0.9985,
+    "macro avg": {
+      "precision": 0.9829206830649521,
+      "recall": 0.9194562947366115,
+      "f1-score": 0.9467407035671409,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9984816213136645,
+      "recall": 0.9985,
+      "f1-score": 0.9984675996842989,
+      "support": 20000.0
+    }
+  },
+  "training_duration_seconds": 6.24
+}

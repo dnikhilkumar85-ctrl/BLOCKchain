@@ -1,0 +1,154 @@
+/* 1. In v4, this single line replaces the old @tailwind directives */
+@import "tailwindcss";
+
+/* 2. Keep your font imports (ensure they are at the top) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round');
+
+/* 3. Link your JS config (OPTIONAL) 
+   If your colors/fonts are defined in tailwind.config.js, add this line 
+   so v4 can find them. If you migrate variables to CSS later, you can remove this. */
+@config "../tailwind.config.js";
+
+@layer base {
+    body {
+        /* Ensure 'font-display' and 'bg-background-light' are defined in your config */
+        @apply font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 antialiased;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #101622;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a2333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #135bec;
+}
+
+.map-background {
+    background-color: #0a0e17;
+    background-image:
+        radial-gradient(circle at 50% 50%, #151b2b 1px, transparent 1px),
+        radial-gradient(circle at 10% 20%, rgba(19, 91, 236, 0.05) 0%, transparent 40%);
+    background-size: 40px 40px, 100% 100%;
+}
+
+.scanlines {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.2));
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+
+/* Leaflet Dark Theme Overrides & Cyber Radar Animations */
+.leaflet-container {
+    background-color: #080c14 !important;
+    font-family: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.6) !important;
+    border-radius: 0.75rem !important;
+    color: #e2e8f0 !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+    padding: 0 !important;
+}
+
+.leaflet-popup-content {
+    margin: 12px 14px !important;
+    line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border: 1px solid rgba(51, 65, 85, 0.6) !important;
+}
+
+.leaflet-popup-close-button {
+    color: #94a3b8 !important;
+    padding: 6px !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: #ffffff !important;
+}
+
+@keyframes cyber-pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+}
+
+.cyber-pulse-ring {
+    animation: cyber-pulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes attack-dash {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+.attack-arc-path {
+    stroke-dasharray: 6, 8;
+    animation: attack-dash 2s linear infinite;
+}
+
+@keyframes laser-glow {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.95;
+    }
+    80% {
+        opacity: 0.85;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.live-attack-arc {
+    stroke-dasharray: 8, 10;
+    animation: attack-dash 1.4s linear infinite, laser-glow 4.2s ease-in-out forwards;
+}
+
+@keyframes blast-wave {
+    0% {
+        transform: scale(0.4);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3.2);
+        opacity: 0;
+    }
+}
+
+.blast-wave-ring {
+    animation: blast-wave 1.6s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
